@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
@@ -15,6 +15,8 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewUser"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
         style="@style/TextAppearance.AppCompat.Large"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,9 +25,19 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewAboutMe"
+        app:layout_constraintTop_toBottomOf="@id/textViewUser"
+        app:layout_constraintStart_toStartOf="parent"
         style="@style/TextAppearance.AppCompat.Small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="FPS tático da riot"
         android:textColor="@color/white_font" />
-</LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/valorant_icon"
+        android:layout_height="0dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
