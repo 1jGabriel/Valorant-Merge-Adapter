@@ -17,7 +17,10 @@ class MainActivity : AppCompatActivity() {
     private fun setupDataInRecyclerView() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         val adapter = MergeAdapter()
-        adapter.addAdapter(HeaderAdapter(Header()))
+        adapter.addAdapter(HeaderAdapter().apply {
+            listOf(Header())
+        })
+
         DataSource.getCharacters().forEach {
             adapter.addAdapter(PersonageAdapter().apply {
                 swapData(listOf(it))
